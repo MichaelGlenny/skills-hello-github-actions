@@ -20,3 +20,11 @@ permissions:
 
 # On Ubuntu, we can use a use to pip install black and then somehow run it on the python file that was updated
 jobs:
+  lint_code: 
+    name: Lint Code 
+    runs-on: ubuntu-latest
+    steps: 
+      name: Install Black
+      run: |
+        pip install black
+    
