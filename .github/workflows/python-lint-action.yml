@@ -32,6 +32,7 @@ jobs:
         with:
           fetch-depth: 2
       - name: Get changed Python files and Black them
+        if: ${{ git diff --name-only -r HEAD^1 HEAD | grep *.py }}
         run: git diff --name-only -r HEAD^1 HEAD | grep *.py | black
       # - name: Commit the Changes to the Branch 
       #   run: 
